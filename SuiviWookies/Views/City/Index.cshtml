@@ -1,0 +1,16 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model CityViewModel
+
+@{
+    this.Layout = "_AdminLayout";
+}
+
+<h1>Liste des villes</h1>
+
+@foreach (var item in Model.Villages)
+{
+    <partial name="CityCol" model="item" />
+}

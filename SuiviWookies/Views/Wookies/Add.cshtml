@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    IEnumerable<SelectListItem> weaponsItems = Model.Weapons.Select(item => new SelectListItem() { Text = item.Label, Value = item.Id.ToString() });
+}
+
+@model WookieViewModel
+
+<h1>Nouvelle Wookie</h1>
+
+<form asp-action="Add" asp-controller="Wookie" method="post">
+
+    <div class="form-group">
+
+        @*the for in the label with relate yhe label to the input by its id
+            by clicking label input will get the focus*@
+        <label for="Surname">Surname</label>
+        <input asp-for="Surname" id="Surname" aria-describedby="SurnameHelp" class="form-control">
+        <small id="surnameHelp" class="form-text text-muted">Information sur le surname.</small>
+        @*this span will be displayed if an error is detected by validation for*@
+        <span asp-validation-for="Surname"></span>
+
+    </div>
+
+    <div class="form-group">
+        <label for="">Arme principale</label>
+        <select asp-for="Wookie.MainWeapon.Id" asp-items="weaponsItems" class="form-select">
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Déclarer</button>
+</form>
+
+
+@section scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

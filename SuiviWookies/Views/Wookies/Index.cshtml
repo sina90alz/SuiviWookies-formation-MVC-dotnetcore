@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@*@model List<Wookie>*@
+
+@model WookiesViewModel
+
+@{
+    ///Here is the first way and worst ways of doin
+    ///put code c# in the view, but then moce to controller
+    ///and by then move to the service
+    //List<Wookie> collection = new List<Wookie>()
+    //{
+    //    new Wookie(),
+    //    new Wookie()
+    //};
+
+    var weaponItems = this.Model.Weapons.Select(i => new SelectListItem() { Text = i.Label, Value = i.Id.ToString() });
+}
+
+<h2>Naissance des wookies</h2>
+
+<h2>Filters</h2>
+
+@foreach (var weapon in Model.Weapons)
+{
+    <div>@weapon.Label</div>
+}
+<select asp-for="WeaponId" asp-items="weaponItems"></select>
+
+@if (Model.Wookies != null && Model.Wookies.Any())
+{
+    @*@Html.Partial("WookieList")*@
+
+    <partial name="WookieList" />
+}
+else
+{
+    <i>Aucune données</i>
+}

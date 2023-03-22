@@ -1,0 +1,20 @@
+﻿@using SuiviWookies.Controllers
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model TestOne
+
+<h1>Nouvelle ville</h1>
+<form method="post">
+    @*<label>Libellé : </label>*@@*<input type="text" name="Label" />*@<br />
+    @*<label>Gps : </label>*@@*<input type="number" name="Gps" />*@
+    <label>Libellé (for) :</label><input asp-for="Label" /><br />
+    <label>Gps (for) :</label><input asp-for="Gps" /><br />
+
+    <input asp-for="OneChild.Label" />
+    <button>Ajouter</button>
+</form>

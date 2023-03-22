@@ -1,0 +1,22 @@
+﻿<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Prenom</th>
+            <th>Taille</th>
+            <th>Date de naissance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @*@foreach (var item in ViewBag.Collection)*@
+        @foreach (var item in Model.Wookies)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Surname</td>
+                <td>@item.Birthday</td>
+                <td>@item.Size</td>
+            </tr>
+        }
+    </tbody>
+</table>

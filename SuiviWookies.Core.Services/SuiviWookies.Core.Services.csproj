@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SuiviWookies.Core.DataContext\SuiviWookies.Core.DataContext.csproj" />
+		<ProjectReference Include="..\SuiviWookies.Core.Interface\SuiviWookies.Core.Interface.csproj" />
+		<ProjectReference Include="..\SuiviWookies.Core.Models\SuiviWookies.Core.Models.csproj" />
+	</ItemGroup>
+
+</Project>
